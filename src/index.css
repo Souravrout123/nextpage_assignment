@@ -11,3 +11,82 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  max-width: 1200px; margin: 40px auto;
+}
+
+.table,tr,th,td{
+  width: 800px;
+  border: 1px solid black;
+  border-collapse: collapse;
+
+}
+
+.header{
+  background-color: darkblue;
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+  color: white;
+}
+
+.bookSeats{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vh;
+  width: 800px;
+}
+
+.bookSeats span{
+  color: orange;
+}
+
+table tr th{
+  height: 7vh;
+}
+
+table tr td{
+  padding: 10px 15px;
+}
+
+.button-part{
+  text-align: center;
+
+}
+
+                     
+.button-part button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border-width: 0;
+  background-color: rgb(251, 168, 13);
+  color: white;
+}
+
+.time-left{
+  font-weight: bolder;
+  font-size: 10px;
+}
+
+.booking-free-trial{
+  color: hwb(39 0% 0%);
+  font-size: 25px;
+  font-weight: bolder;
+  padding-bottom: 15px;
+
+}
+
+.class-sch{
+  color: darkblue;
+}
+
+.cart-main-heading{
+  color: darkblue;
+}
