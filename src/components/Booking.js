@@ -90,42 +90,16 @@ function Booking() {
   const [timeLeft, setTimeLeft] = useState(60);
   const [data, setData] = useState(initialData);
 
-  // function addToCart(item, index) {
-  //   dispatch(bookNow(item));
-  // }
-
-//   function addToCart(item, index) {
-//     if (item.availability > 0) {
-//       // Only decrement availability if it's greater than 0
-//       const updatedData = [...data];
-//       updatedData[index].availability -= 1;
-//       setData(updatedData);
-//       dispatch(bookNow(item));
-//     }
-//   }
-
-
-function addToCart(item, index) {
+  function addToCart(item, index) {
     if (item.availability > 0) {
-      // Create a deep copy of the data array
       const updatedData = [...data];
-  
-      // Create a deep copy of the item to avoid modifying the original
       const updatedItem = { ...updatedData[index] };
-  
-      // Modify the availability of the updated item
       updatedItem.availability -= 1;
-  
-      // Update the item in the copied array
       updatedData[index] = updatedItem;
-  
-      // Set the updated data in the state
       setData(updatedData);
-  
       dispatch(bookNow(item));
     }
   }
-  
 
   useEffect(() => {
     let randomNum = Math.ceil(Math.random() * 60);
@@ -137,7 +111,9 @@ function addToCart(item, index) {
   return (
     <>
       <div>
-        <p className="time-left">Time Left: {timeLeft} seconds</p>
+        <p className="time-left">
+          <h3>Time Left: {timeLeft} seconds</h3>
+        </p>
         <div className="bookSeats">
           <p className="booking-free-trial">Claim Your Free Trail Class</p>
           <Link to="/cart">
@@ -150,7 +126,7 @@ function addToCart(item, index) {
       </div>
 
       <div className="bookSeats">
-        <h3>Class Schedule</h3>
+        <h2>Class Schedule</h2>
         <p>
           Free Seats Left: <span>{Math.max(data.length - x.length, 5)}</span>
         </p>
@@ -171,7 +147,7 @@ function addToCart(item, index) {
               <td>{eachItem.time}</td>
               <td>{eachItem.availability}</td>
               <td className="button-part">
-                <button onClick={() => addToCart(eachItem,index)}>
+                <button onClick={() => addToCart(eachItem, index)}>
                   Book Now
                 </button>
               </td>
