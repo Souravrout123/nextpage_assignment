@@ -16,7 +16,6 @@ function Cart() {
     <tr className='header'>
         <th>Date</th>
         <th>Time</th>
-        <th>Availablity</th>
         <th></th>
     </tr>
     
@@ -26,7 +25,6 @@ function Cart() {
                     <tr key={eachItem.id}>
                         <td>{eachItem.date}</td>
                         <td>{eachItem.time}</td>
-                        <td>{eachItem.availability}</td>
                         <td className='button-part' onClick={()=>dispatch(cancelSeat(index))}><button >Cancel</button></td>
                     </tr> 
                 )
