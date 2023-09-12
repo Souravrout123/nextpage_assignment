@@ -147,8 +147,11 @@ function Booking() {
               <td>{eachItem.time}</td>
               <td>{eachItem.availability}</td>
               <td className="button-part">
-                <button onClick={() => addToCart(eachItem, index)}>
+                {/* <button onClick={() => addToCart(eachItem, index)}>
                   Book Now
+                </button> */}
+                <button onClick={() => addToCart(eachItem, index)}>
+                  {eachItem?.availability === 0 ? "Full" : "Book Now"}
                 </button>
               </td>
             </tr>
